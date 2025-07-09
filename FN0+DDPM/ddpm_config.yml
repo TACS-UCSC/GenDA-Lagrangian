@@ -1,0 +1,55 @@
+batch_size: 30 
+beta_scheduler: linear
+beta_end: 0.005
+beta_start: 0.0001
+epochs: 500
+timesteps: 1000
+model_name: ~
+ddpm_arch: unet_cond
+ddpm_params:
+    in_channels: 1
+    out_channels: 1
+    down_channels: [128, 128, 128, 128, 128]    
+    up_channels: [128, 128, 128, 128, 128]
+    time_emb_dim: 64   
+# ddpm_arch: fno2d (does not work with the current setup)
+# ddpm_params:
+#     in_channels: 1
+#     out_channels: 1
+lr: .001
+train_type: noise
+data_type: delta_mean
+loss_function_start_batch: -1 # -1 means always use loss_function_start loss
+loss_function_start: mse_loss
+loss_args_start: {}
+loss_function: spectral_sqr_abs2
+loss_args_end: 
+    lambda_fft: 0.2
+    lat_lon_bal: .5
+reconstuct_condition: true
+
+# batch_size: # the number of samples in each batch
+# beta_scheduler: # the type of noise scheduler to use (linear or cosine)
+# beta_end: # the end value for the beta noise schedule
+# beta_start: # the start value for the beta noise schedule
+# epochs: # the number of epochs to train for
+# timesteps: # the number of timesteps in the diffusion process
+# model_name: # the name of the model, if None, a name will be generated
+# ddpm_arch: # the architecture of the DDPM model (unet or fno2d)
+# ddpm_params: # the parameters for the DDPM model
+#     in_channels: # the number of input channels
+#     out_channels: # the number of output channels
+#     down_channels: # the number of channels in the downsampling layers
+#     up_channels: # the number of channels in the upsampling layers
+#     time_emb_dim: # the dimension of the time embedding
+# lr: # the learning rate for the optimizer
+# train_type: # the type of training to use (noise or data)
+# data_type: # the type of data to use (delta_mean)
+# loss_function_start_batch: # -1 means always use loss_function_start loss, the batch to switch from loss_function_start to loss_function
+# loss_function_start: # the loss function to use at the beginning of training
+# loss_args_start: # the arguments for the starting loss function
+# loss_function: # the loss function to use after loss_function_start_batch
+# loss_args_end: # the arguments for the ending loss function
+#     lambda_fft: # the weight for the spectral loss
+#     lat_lon_bal: # the weight for the lat/lon balancing
+# reconstuct_condition: # whether or not to reconstruct the condition
