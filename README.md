@@ -10,7 +10,7 @@ Our method combines **Fourier Neural Operators (FNO)** or **UNet** architectures
 
 ## **Data Preparation**
 
-Three different datasets used in this study are available [here on Zenodo](https://zenodo.org/records/15844262).
+Three different datasets used in this study are available [here on Zenodo](https://zenodo.org/records/15844262). More information about each system or dataset is explained in our paper, section 2, Methods. https://arxiv.org/abs/2507.06479
 
 ## **Training Steps**
 
