@@ -8,5 +8,18 @@ Our method combines **Fourier Neural Operators (FNO)** or **UNet** architectures
 
 
 
+## **Data Preparation**
+
+Three different datasets used in this study are available [here on Zenodo](https://zenodo.org/records/15844262).
+
+## **Training Steps**
+
+1. **Train the base models** (either FNO or UNet). The input for these models is the extremely sparse observational data, and the target (label) is the corresponding full-resolution ocean state. Save the trained base model after completion.
+
+2. **Train the DDPM model**, using the previously trained base model as a conditioning input for DDPM.
+
+
+
+
 
 
