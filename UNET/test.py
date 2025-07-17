@@ -21,7 +21,7 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 
 # Load data
-from load_data_CNN import get_dynamics_data
+from load_data import get_dynamics_data
 u_train_m, u_train_o, u_test_m, u_test_o = get_dynamics_data()
 
 u_train_m = u_train_m.to(device)
